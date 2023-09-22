@@ -11,7 +11,7 @@ phases:
     - echo Logging in to Amazon ECR.... 
     - aws --version
     # UPDATE the following line with your own region.I'm in us-west-1 Region
-    - $(aws ecr get-login --no-include-email --region us-west-1) 
+    - aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin 770594577260.dkr.ecr.us-west-1.amazonaws.com
   build: 
     commands: 
     - echo Downloading SHIFTLEFT
